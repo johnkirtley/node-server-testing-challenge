@@ -19,5 +19,5 @@ function remove(id) {
 }
 
 function find() {
-	return db('players').select('name', 'number');
+	return db('players').select('id', 'name', 'number');
 }
