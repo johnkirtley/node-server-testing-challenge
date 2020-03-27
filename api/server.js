@@ -34,12 +34,14 @@ server.post('/api/players', (req, res) => {
 
 server.delete('/api/players/:id', (req, res) => {
 	const { id } = req.params;
-
+	console.log(id);
 	Players.remove(id)
-		.then(res => {
+		.then(player => {
 			res.status(200).json({ success: 'Player removed' });
 		})
 		.catch(err => {
 			console.log('Error removing player');
 		});
 });
+
+module.exports = server;
